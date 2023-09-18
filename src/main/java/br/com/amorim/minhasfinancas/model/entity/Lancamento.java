@@ -1,7 +1,7 @@
 package br.com.amorim.minhasfinancas.model.entity;
 
 
-import br.com.amorim.minhasfinancas.model.enums.StatusLancameto;
+import br.com.amorim.minhasfinancas.model.enums.StatusLancamento;
 import br.com.amorim.minhasfinancas.model.enums.TipoLancamento;
 import jakarta.persistence.*;
 
@@ -12,8 +12,11 @@ import java.time.LocalDate;
 import lombok.*;
 
 @Entity
-@Data
 @Table(name = "lancamento", schema = "financas")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lancamento {
 
     @Id
@@ -46,5 +49,5 @@ public class Lancamento {
 
     @Column(name = "status")
     @Enumerated(value = EnumType.STRING)
-    private StatusLancameto status;
+    private StatusLancamento status;
 }

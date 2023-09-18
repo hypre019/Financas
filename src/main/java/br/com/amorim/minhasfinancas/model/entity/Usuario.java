@@ -2,11 +2,17 @@ package br.com.amorim.minhasfinancas.model.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
-@Table(name = "usuario", schema = "financas")
+@Table( name = "usuario" , schema = "financas")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
 
     @Id
@@ -23,5 +29,4 @@ public class Usuario {
     @Column(name = "senha")
     private String senha;
 
-
-}
+ }
